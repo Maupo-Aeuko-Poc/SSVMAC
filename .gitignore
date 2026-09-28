@@ -1,0 +1,12 @@
+# Claude Code settings
+.claude/
+.freebuff/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Optional: exclude OS-specific files
+.DS_Store
+Thumbs.db
