@@ -1,12 +1,68 @@
-# Claude Code settings
-.claude/
-.freebuff/
+# ============================================================================
+# SSVMAC / Maupo — publish contract
+#
+# The repo publishes THE WORK: code, mind (persona), face art, tests, CI.
+# The repo never publishes THE LIFE: conversation logs, learned facts,
+# energy state, snapshots — everything Maupo became while running stays
+# local. A fresh clone must build and test cleanly; it must NOT contain
+# anyone's conversations, ever.
+# ============================================================================
 
-# Python
+# ---------------------------------------------------------------------------
+# Maupo's private life — runtime state, never public
+# ---------------------------------------------------------------------------
+# memory/: sessions/ (every conversation), soft/hard memory, vitality,
+# health.log, and all hidden caches (.recall_cache.json, .semantic_index.json…)
+memory/
+# snapshots/: the 6-hour emergency snapshots of memory/ + mind/
+snapshots/
+# archived memory folders
+memory_archive_*/
+# compressor backups (soft_mem.md.bak)
+*.bak
+# any future runtime logs
+*.log
+# loader skips files starting with _ (working/reference art)
+ui/face_assets/_*
+# auto-generated every turn by the emotion engine (seeded on first run)
+mind/emotional_matrix.md
+
+# ---------------------------------------------------------------------------
+# Local secrets & environment — defensive, even though Maupo is keyless
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.local
+
+# ---------------------------------------------------------------------------
+# Python tooling & caches
+# ---------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
 
-# Optional: exclude OS-specific files
+# ---------------------------------------------------------------------------
+# Editor / agent / OS junk
+# ---------------------------------------------------------------------------
+.claude/
+.freebuff/
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
+desktop.ini
+*.tmp
+
+# ---------------------------------------------------------------------------
+# Personal notes & talking points (not required to run Maupo)
+# ---------------------------------------------------------------------------
+think_about_ssvmac.txt
+
